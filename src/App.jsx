@@ -12,13 +12,13 @@ import Cars from "./Pages/Cars.jsx"
 
 export default function App() {
 
-  let [allCars, setCars] = useState({
+let [allCars, setCars] = useState({
     Audi: {
         Suv: [
             {
                 name: "Audi Q3",
                 price: "Rs. 50,000",
-                image: "https://www.audiusa.com/content/dam/audi/us/en/models/suv-models/audi-q3/2025/audi-q3-2025-hero.jpg",
+                image: "https://images.unsplash.com/photo-1616422285623-13ff0162193c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D",
                 description: "Compact and stylish SUV with great fuel efficiency."
             },
             {
@@ -59,15 +59,7 @@ export default function App() {
                 image: "https://www.audiusa.com/content/dam/audi/us/en/models/sedan-models/audi-a8/2025/audi-a8-2025-hero.jpg",
                 description: "Luxury sedan with a luxurious interior and advanced technology."
             }
-        ],
-        // Hatchback: [
-        //     {
-        //         name: "Audi A3",
-        //         price: "Rs. 40,000",
-        //         image: "https://www.gettyimages.com/gi/a3-sportback-2024-hero.jpg",
-        //         description: "Compact hatchback with a sporty design and efficient performance."
-        //     }
-        // ]
+        ]
     },
     BMW: {
         Suv: [
@@ -286,7 +278,6 @@ export default function App() {
 });
 
 
-
   return (
     <div>
       <BrowserRouter>
@@ -297,7 +288,7 @@ export default function App() {
           <Route path='/' element = {<Home/>} />
           <Route path='/brands' element ={<Brands allCars = {allCars}/>} />
           <Route path='/brands/:brandName/models' element = {<Models allCars = {allCars}/>} />
-          <Route path='/brands/:brandName/models/:carType/Cars' element = {<Models allCars = {allCars}/>} />
+          <Route path='/cars/:brandName/:modelName' element = {<Cars allCars = {allCars}/>} />
 
         </Routes>
       </BrowserRouter>
